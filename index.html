@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Notice Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Community Notice Board</h1>
+    <p>Stay updated with your society’s news and events</p>
+  </header>
+
+  <nav>
+    <a href="#announcements">Announcements</a>
+    <a href="#events">Events</a>
+    <a href="#market">Buy/Sell/Rent</a>
+    <a href="#contacts">Important Contacts</a>
+    <a href="#admin">Admin</a>
+  </nav>
+
+  <section id="announcements">
+    <h2>Announcements</h2>
+    <div id="announcement-list"></div>
+  </section>
+
+  <section id="events">
+    <h2>Upcoming Events</h2>
+    <div id="event-list"></div>
+  </section>
+
+  <section id="market">
+    <h2>Buy / Sell / Rent</h2>
+    <div id="market-list"></div>
+  </section>
+
+  <section id="contacts">
+    <h2>Important Contacts</h2>
+    <div class="card">Society Office: 9876501234</div>
+    <div class="card">Security Gate: 9876504321</div>
+    <div class="card">Electrician (Rahul): 9876512345</div>
+    <div class="card">Plumber (Suresh): 9876598765</div>
+  </section>
+
+  <section id="admin">
+    <h2>Admin Panel</h2>
+    <div class="admin-panel">
+      <form id="postForm">
+        <label for="section">Choose Section:</label>
+        <select id="section" required>
+          <option value="announcement-list">Announcements</option>
+          <option value="event-list">Events</option>
+          <option value="market-list">Buy/Sell/Rent</option>
+        </select>
+
+        <label for="message">Post Content:</label>
+        <textarea id="message" rows="3" required></textarea>
+
+        <button type="submit">Add Post</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Society | Designed for Community Use</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
