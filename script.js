@@ -29,7 +29,25 @@ form.addEventListener('submit', function(e) {
 function addCard(section, message) {
   const card = document.createElement('div');
   card.classList.add('card');
-  card.textContent = message;
+
+  // Create message span
+  const msgSpan = document.createElement('span');
+  msgSpan.textContent = message;
+  card.appendChild(msgSpan);
+
+  // Create delete button
+  const delBtn = document.createElement('button');
+  delBtn.textContent = 'Delete';
+  delBtn.className = 'btn delete-btn';
+  delBtn.style.marginLeft = '16px';
+  delBtn.onclick = function() {
+    card.remove();
+    let savedPosts = JSON.parse(localStorage.getItem(section)) || [];
+    savedPosts = savedPosts.filter(post => post !== message);
+    localStorage.setItem(section, JSON.stringify(savedPosts));
+  };
+  card.appendChild(delBtn);
+
   document.getElementById(section).appendChild(card);
 }
 
